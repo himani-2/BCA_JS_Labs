@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qn 4</title>
+</head>
+<body>
+    <script>
+    function EvenOdd(num) {
+        let number = Number(prompt("Enter a number:"));
+        if (number<=0 ){
+            alert("Please enter a positive number.");
+            return;
+
+        }
+        if (number % 2 === 0) {
+            alert(number + " is an even number.");
+        } else {
+            alert(number + " is an odd number.");
+        }
+    }
+    </script>
+    <button onclick="EvenOdd()">
+        Check Even or Odd
+    </button>
+</body>
+</html>
