@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab2qn1</title>
+</head>
+<body>
+
+    <h2>Multiplication Table </h2>
+
+    <input type="text" id="num" placeholder="Enter a number">
+    <button onclick="generateTable()">Proceed</button>
+
+    <div id="result"></div>
+
+    <script>
+        function generateTable() {
+            let input = document.getElementById("num").value;
+            let result = document.getElementById("result");
+
+            // Validation
+            if (input.trim() === "") {
+                result.innerHTML = "Please enter a number.";
+                return;
+            }
+
+            if (isNaN(input)) {
+                result.innerHTML = "Invalid input. Please enter a valid number.";
+                return;
+            }
+
+            let num = Number(input);
+
+            if (num <= 0) {
+                result.innerHTML = "Please enter a number greater than 0.";
+                return;
+            }
+
+          
+            let table = "<h3>Multiplication Table of " + num + "</h3>";
+
+            for (let i = 1; i <= 10; i++) {
+                table += `${num} × ${i} = ${num * i}<br>`;
+            }
+
+            result.innerHTML = table;
+        }
+    </script>
+
+</body>
+</html>
