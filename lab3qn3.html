@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Text Color</title>
+</head>
+<body>
+
+    <h2 id="text">Hello World!</h2>
+
+    <input type="color" id="colorPicker" onchange="changeColor()">
+
+    <script>
+        function changeColor() {
+            let color = document.getElementById("colorPicker").value;
+            document.getElementById("text").style.color = color;
+        }
+    </script>
+
+</body>
+</html>
