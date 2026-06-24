@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Duplicates</title>
+</head>
+<body>
+
+    <h2>Find Duplicate Values in Array</h2>
+    <button onclick="findDuplicates()">Find Duplicates</button>
+
+    <p id="output"></p>
+
+    <script>
+        function findDuplicates() {
+            let arr = [1, 2, 3, 4, 2, 5, 3, 6, 1];
+            let duplicates = [];
+
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = i + 1; j < arr.length; j++) {
+                    if(arr[i] === arr[j] &&
+                       !duplicates.includes(arr[i])) {
+                        duplicates.push(arr[i]);
+                    }
+                }
+            }
+
+            document.getElementById("output").innerHTML =
+                "Duplicate Values: " + duplicates.join(", ");
+        }
+    </script>
+
+</body>
+</html>

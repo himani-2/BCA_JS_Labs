@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Text Color</title>
+</head>
+<body>
+
+    <h2 id="text">Hello World!</h2>
+
+    Enter Color:
+    <input type="text" id="color" placeholder="e.g. red, blue, green">
+
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        function changeColor() {
+            let color = document.getElementById("color").value;
+            document.getElementById("text").style.color = color;
+        }
+    </script>
+
+</body>
+</html>
