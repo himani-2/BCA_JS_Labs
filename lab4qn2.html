@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Bold Odd Normal</title>
+</head>
+<body>
+
+<h2>Display Numbers</h2>
+
+First Number:
+<input type="number" id="num1"><br><br>
+
+Second Number:
+<input type="number" id="num2"><br><br>
+
+<button onclick="displayNumbers()">Display</button>
+
+<p id="result"></p>
+
+<script>
+function displayNumbers() {
+
+    let start = Number(document.getElementById("num1").value);
+    let end = Number(document.getElementById("num2").value);
+
+    // Check if inputs are numbers
+    if (isNaN(start) || isNaN(end)) {
+        alert("Please enter numbers in both fields.");
+        return;
+    }
+
+    // Check positive numbers
+    if (start < 0 || end < 0) {
+        alert("Please enter positive numbers.");
+        return;
+    }
+
+    // Check first number is smaller
+    if (start >= end) {
+        alert("First number must be smaller than second number.");
+        return;
+    }
+
+    let output = "";
+
+    for (let i = start; i <= end; i++) {
+        if (i % 2 == 0) {
+            output += "<b>" + i + "</b><br>";
+        } else {
+            output += i + "<br>";
+        }
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
