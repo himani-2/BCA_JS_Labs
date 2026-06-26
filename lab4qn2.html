@@ -23,19 +23,18 @@ function displayNumbers() {
     let start = Number(document.getElementById("num1").value);
     let end = Number(document.getElementById("num2").value);
 
-    // Check if inputs are numbers
+    
     if (isNaN(start) || isNaN(end)) {
         alert("Please enter numbers in both fields.");
         return;
     }
 
-    // Check positive numbers
     if (start < 0 || end < 0) {
         alert("Please enter positive numbers.");
         return;
     }
 
-    // Check first number is smaller
+ 
     if (start >= end) {
         alert("First number must be smaller than second number.");
         return;
