@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+
+    
+</head>
+
+<body>
+
+<h2>User Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+Name:<br>
+<input type="text" id="name"><br>
+
+Email:<br>
+<input type="text" id="email"><br>
+
+Password:<br>
+<input type="password" id="password"><br>
+
+Confirm Password:<br>
+<input type="password" id="confirm"><br>
+
+<input type="submit" value="Register">
+
+</form>
+
+<p id="error" class="error"></p>
+
+<script>
+
+function validateForm(){
+
+    let name=document.getElementById("name").value;
+    let email=document.getElementById("email").value;
+    let password=document.getElementById("password").value;
+    let confirm=document.getElementById("confirm").value;
+
+    let error="";
+
+   
+    if(name==""){
+        error+="Name cannot be empty.<br>";
+    }
+
+    
+    let emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailPattern.test(email)){
+        error+="Enter a valid email address.<br>";
+    }
+
+    if(password.length<8){
+        error+="Password must be at least 8 characters long.<br>";
+    }
+
+  
+    if(password!=confirm){
+        error+="Passwords do not match.<br>";
+    }
+
+    if(error!=""){
+        document.getElementById("error").innerHTML=error;
+        return false;
+    }
+
+    alert("Registration Successful!");
+    return true;
+}
+
+</script>
+
+</body>
+</html>
